@@ -28,7 +28,8 @@
             <!-- genera con vue  -->
             <div v-for="(slide,index) in slides"
                  class="thumb" 
-                 :class="{active: index === activeSlide}">
+                 :class="{active: index === activeSlide}"
+                 @click="setSlide(index)">
                 <img :src="slide.image" :alt="slide.title">
             </div>
 
