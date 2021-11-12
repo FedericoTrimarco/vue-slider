@@ -32,8 +32,8 @@
                 <img :src="slide.image" :alt="slide.title">
             </div>
 
-            <div class="prev">&uarr;</div>
-            <div class="next">&darr;</div>
+            <div @click="prevSlide" class="prev">&uarr;</div>
+            <div @click="nextSlide" class="next">&darr;</div>
         </div>
     </section>
 
