@@ -35,8 +35,8 @@ const app = new Vue({
         activeSlide: 0,
     },
     created(){
-        setInterval(function(){
-            app.nextSlide();
+        setInterval(() =>{
+            this.nextSlide();
         }, 3000)
     },
     methods: {
