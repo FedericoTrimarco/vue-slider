@@ -33,11 +33,10 @@ const app = new Vue({
         ],
         
         activeSlide: 0,
+        autoPlayId: 0,
     },
     created(){
-        setInterval(() =>{
-            this.nextSlide();
-        }, 3000)
+        this.autoPlay();
     },
     methods: {
         prevSlide(){
@@ -54,6 +53,17 @@ const app = new Vue({
         },
         setSlide(index){
             this.activeSlide = index;
+        },
+        autoPlay(){
+            this.autoPlayId = setInterval(() =>{
+                this.nextSlide();
+            }, 3000)
+        },
+        stopAutoPlay(event){
+            clearInterval(this.autoPlayId);
+
+            console.log(event.target); //farà vedere chi ha attivanto l'evento
+            event.target.focus();
         }
     },
 });
